@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ishita's Boyfie ♡</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    color: #fff7e8;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(194, 24, 39, .28), transparent 30%),
+      radial-gradient(circle at 80% 75%, rgba(32, 73, 135, .25), transparent 35%),
+      #070a10;
+    font-family: "Courier New", monospace;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    opacity: .16;
+    pointer-events: none;
+    background-image: radial-gradient(#fff7e8 1px, transparent 1px);
+    background-size: 9px 9px;
+    mask-image: linear-gradient(to bottom, #000, transparent 75%);
+  }
+
+  .web {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    opacity: .18;
+    border-radius: 50%;
+    background:
+      repeating-conic-gradient(from 0deg, transparent 0deg 14deg, #fff 15deg 16deg, transparent 17deg 29deg),
+      repeating-radial-gradient(circle, transparent 0 25px, #fff 26px 27px, transparent 28px 50px);
+  }
+  .web.one { top: -115px; right: -90px; }
+  .web.two { bottom: -130px; left: -100px; transform: rotate(22deg); }
+
+  #terminal {
+    width: min(620px, 88vw);
+    line-height: 1.9;
+    font-size: clamp(.9rem, 2.7vw, 1.05rem);
+    color: #d7e4ff;
+    text-shadow: 0 0 12px rgba(110,150,255,.4);
+  }
+  .cursor { animation: blink .8s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  #reveal {
+    display: none;
+    width: min(680px, 90vw);
+    padding: 44px 26px;
+    text-align: center;
+    position: relative;
+    animation: reveal .9s ease both;
+  }
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(16px) scale(.98); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .eyebrow {
+    letter-spacing: .24em;
+    font-size: .78rem;
+    opacity: .78;
+    margin-bottom: 12px;
+  }
+  h1 {
+    margin: 0;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    line-height: .9;
+    letter-spacing: .015em;
+    transform: rotate(-2deg);
+    text-shadow: 5px 5px 0 #a51223, -2px -2px 0 #111;
+  }
+  .earth {
+    margin: 18px 0 30px;
+    letter-spacing: .16em;
+    color: #9ebcff;
+    font-size: .82rem;
+  }
+  .note {
+    font-family: Georgia, serif;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    line-height: 1.6;
+    margin: 0 auto 30px;
+    max-width: 500px;
+  }
+  .open {
+    display: inline-block;
+    padding: 17px 26px;
+    border: 2px solid #fff7e8;
+    background: #b51528;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: .08em;
+    box-shadow: 7px 7px 0 #193b74;
+    transform: rotate(-1deg);
+    transition: .18s ease;
+  }
+  .open:hover {
+    transform: rotate(1deg) translate(-2px,-2px);
+    box-shadow: 10px 10px 0 #193b74;
+  }
+  .warning {
+    margin-top: 26px;
+    font-size: .72rem;
+    opacity: .62;
+  }
+  .signature {
+    position: fixed;
+    bottom: 18px;
+    width: 100%;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: .78rem;
+    opacity: .55;
+  }
+  .heart {
+    display: inline-block;
+    animation: beat 1.4s ease-in-out infinite;
+  }
+  @keyframes beat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<!--
+  hey nosy developer 👀
+  yes, your girlfriend made this for you.
+  now stop inspecting the code and go open your card.
+  she loves you very very much. ♡
+-->
+
+<div class="web one"></div>
+<div class="web two"></div>
+
+<div id="terminal" aria-live="polite">
+  <div id="lines"></div><span class="cursor">█</span>
+</div>
+
+<main id="reveal">
+  <div class="eyebrow">SPECIAL DELIVERY FOR</div>
+  <h1>ISHITA'S<br>BOYFIE <span class="heart">♡</span></h1>
+  <div class="earth">EARTH-143 // CLASSIFIED</div>
+
+  <p class="note">
+    Your friendly neighbourhood girlfriend<br>
+    made something for you.
+  </p>
+
+  <a class="open" href="https://canva.link/r635l3q5mq6fl9q" target="_blank" rel="noopener noreferrer">
+    🕸 OPEN ISSUE #01
+  </a>
+
+  <div class="warning">⚠ WARNING: girlfriend love levels critically high.</div>
+</main>
+
+<div class="signature">made with ♡ by your biggestttt fan</div>
+
+<script>
+const messages = [
+  "> incoming transmission...",
+  "> scanning multiverse...",
+  "> earth-143 located.",
+  "> boyfie detected ✓"
+];
+
+const lines = document.getElementById("lines");
+const terminal = document.getElementById("terminal");
+const reveal = document.getElementById("reveal");
+
+let i = 0;
+function addLine() {
+  if (i < messages.length) {
+    const d = document.createElement("div");
+    d.textContent = messages[i++];
+    lines.appendChild(d);
+    setTimeout(addLine, 650);
+  } else {
+    setTimeout(() => {
+      terminal.style.display = "none";
+      reveal.style.display = "block";
+    }, 850);
+  }
+}
+setTimeout(addLine, 350);
+</script>
+</body>
+</html>
